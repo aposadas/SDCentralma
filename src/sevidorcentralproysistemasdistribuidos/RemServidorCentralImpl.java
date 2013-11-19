@@ -31,6 +31,7 @@ public class RemServidorCentralImpl extends UnicastRemoteObject implements RemSe
     @Override
     public void agregarSucursalActiva(String ipSucursal) {
         sucursales.add(ipSucursal);
+        System.out.println("Se envio el  ip de las sucursal" + ipSucursal);
     }
 
     @Override
