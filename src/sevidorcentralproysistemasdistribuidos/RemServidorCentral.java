@@ -15,7 +15,7 @@ public interface RemServidorCentral extends java.rmi.Remote {
    
     public String getMessage() throws RemoteException;
     public ArrayList<String> listaSucursalActiva() throws RemoteException;
-    public void agregarSucursalActiva(String ipSucursal) throws RemoteException;
+    public void agregarSucursalActiva(String ipSucursal, String sucursal) throws RemoteException;
      
     
     

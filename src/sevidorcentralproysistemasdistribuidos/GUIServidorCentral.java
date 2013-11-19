@@ -381,11 +381,15 @@ public class GUIServidorCentral extends javax.swing.JFrame {
      */
 
         private void actualizarSucursales(){
-//        Iterator iterator = servidor.getListaSucursales().iterator();
-//        DefaultListModel model = new DefaultListModel();
-//        while (iterator.hasNext())
-//            model.addElement(((String[])iterator.next())[0]);
-//        jListSucursales.setModel(model);
+        Iterator iterator = RemServidorCentralImpl.getSucursales().iterator(); 
+        DefaultListModel model = new DefaultListModel();
+       
+        while (iterator.hasNext()){
+                model.addElement(((String)iterator.next()).toString());
+                
+                
+        }
+                jListSucursales.setModel(model);
     }
     
         private void actualizarPaquetes(){

@@ -15,23 +15,23 @@ import java.util.ArrayList;
  */
 public class RemServidorCentralImpl extends UnicastRemoteObject implements RemServidorCentral{
 
-    private ArrayList<String> sucursales = new ArrayList<>();
+    public static ArrayList<String> sucursales = new ArrayList<>();
 
     public RemServidorCentralImpl() throws RemoteException  {
+        
     }
-    
-    
-   
+      
+  
+    public static ArrayList<String> getSucursales() {
+       
+        return sucursales;
+    }
 
     @Override
-    public ArrayList<String> listaSucursalActiva() {
-        return  sucursales;
-    }
-
-    @Override
-    public void agregarSucursalActiva(String ipSucursal) {
-        sucursales.add(ipSucursal);
-        System.out.println("Se envio el  ip de las sucursal" + ipSucursal);
+    public void agregarSucursalActiva(String ipSucursal, String numSucursal) {
+        sucursales.add("Sucursal "+numSucursal);
+        System.out.println("Se Agrego el  ip de las sucursal" + ipSucursal +" num sucursal "+ numSucursal);
+        
     }
 
     @Override
@@ -40,5 +40,15 @@ public class RemServidorCentralImpl extends UnicastRemoteObject implements RemSe
         
     
     }
+
+    @Override
+    public ArrayList<String> listaSucursalActiva() throws RemoteException {
+        return sucursales;
+        
+      
+    }
+    
+  
+    
     
 }
